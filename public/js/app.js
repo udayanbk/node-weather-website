@@ -19,6 +19,10 @@ weatherForm.addEventListener('submit', (event) => {
                 messageThree.textContent = '"You are the sky. Everything else - it\'s just the weather"'
 
             }
+            else if (!data.location){
+                messageOne.textContent = data.error
+                messageThree.textContent = '"Nothing succeeds like address.!!"  - Fran Lebowitz'
+            }
 
             else if (data.location_error){
                 messageOne.textContent = data.location_error
@@ -28,7 +32,7 @@ weatherForm.addEventListener('submit', (event) => {
             else{
                 messageOne.textContent = 'You are viewing weather of '+data.location
                 messageTwo.textContent = data.forecast
-                messageThree.textContent = '"May your day overflow with Love, Joy, Piece & Miracles !!"'
+                messageThree.textContent = '"If your hate could be turned into electricity, it could light up the whole world."  - Nikola Tesla'
             }
         })
     })
